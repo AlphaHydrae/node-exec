@@ -10,14 +10,15 @@ permissions:
   push:
     branches:
       - main
-    tags-ignore:
+    tags:
       - '**'
     paths-ignore:
-      - '**/*.md'
-      - LICENSE
-      - '**/*.gitignore'
       - .editorconfig
-      - docs/**
+      - '**/*.gitignore'
+      - LICENSE
+      - '**/*.md'
+      - .prettierignore
+      - .prettierrc.yml
   pull_request: null
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
