@@ -1,6 +1,12 @@
 {
-  "name": "@napi-rs/package-template-linux-arm64-musl",
-  "version": "1.0.0",
+  "name": "@alphahydrae/exec-linux-arm64-musl",
+  "description": "The execvp function for Node.js",
+  "license": "MIT",
+  "keywords": [
+    "exec",
+    "execvp"
+  ],
+  "version": "0.1.0",
   "os": [
     "linux"
   ],
@@ -14,22 +20,11 @@
   "files": [
     "package-template.linux-arm64-musl.node"
   ],
-  "description": "Template project for writing node package with napi-rs",
-  "keywords": [
-    "napi-rs",
-    "NAPI",
-    "N-API",
-    "Rust",
-    "node-addon",
-    "node-addon-api"
-  ],
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaHydrae/node-exec.git"
+  },
   "engines": {
-    "node": ">= 10"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": "git@github.com:napi-rs/package-template.git"
+    "node": "^18 || ^20 || ^22"
+  }
 }

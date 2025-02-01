@@ -1,27 +1,27 @@
 {
-  "name": "@napi-rs/package-template-darwin-arm64",
-  "version": "1.0.0",
+  "name": "@alphahydrae/exec-darwin-arm64",
+  "description": "The execvp function for Node.js",
+  "license": "MIT",
+  "keywords": [
+    "exec",
+    "execvp"
+  ],
+  "version": "0.1.0",
   "os": [
     "darwin"
   ],
   "cpu": [
     "arm64"
   ],
-  "main": "package-template.darwin-arm64.node",
+  "main": "exec.darwin-arm64.node",
   "files": [
-    "package-template.darwin-arm64.node"
+    "exec.darwin-arm64.node"
   ],
-  "description": "Template project for writing node package with napi-rs",
-  "keywords": [
-    "execvp"
-  ],
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaHydrae/node-exec.git"
+  },
   "engines": {
-    "node": ">= 10"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": "git@github.com:napi-rs/package-template.git"
+    "node": "^18 || ^20 || ^22"
+  }
 }
