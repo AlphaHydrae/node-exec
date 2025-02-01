@@ -33,6 +33,6 @@ pub fn do_not_close_on_exit(fd: i32) -> Result<()> {
     .map_err(|_| Error::new(Status::GenericFailure, "fcntl failed"))
 }
 
-fn string_ref_to_c_str(string: &String) -> Result<CString> {
-  CString::new(string.clone()).map_err(|_| Error::new(Status::GenericFailure, "Invalid string"))
+fn string_ref_to_c_str(string: &str) -> Result<CString> {
+  CString::new(string.to_owned()).map_err(|_| Error::new(Status::GenericFailure, "Invalid string"))
 }
