@@ -16,8 +16,8 @@ permissions:
       - '**'
     paths-ignore:
       - .editorconfig
-      - '**/*.gitignore'
-      - LICENSE
+      - .gitignore
+      - LICENSE.txt
       - '**/*.md'
       - .prettierignore
       - .prettierrc.yml
