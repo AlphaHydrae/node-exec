@@ -20,6 +20,7 @@ This package was developed to be used in Node.js scripts that are frontends to
 execute other commands. For example, a script that would build and execute a
 complex SSH or Ansible command.
 
+[![version](https://img.shields.io/npm/v/@alphahydrae/exec)](https://www.npmjs.com/package/@alphahydrae/exec)
 [![build](https://github.com/AlphaHydrae/node-exec/actions/workflows/build.yml/badge.svg)](https://github.com/AlphaHydrae/node-exec/actions/workflows/build.yml)
 [![MIT License](https://img.shields.io/static/v1?label=license&message=MIT&color=informational)](https://opensource.org/licenses/MIT)
 
