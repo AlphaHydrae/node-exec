@@ -2,7 +2,7 @@
   "name": "@alphahydrae/exec",
   "version": "0.1.1",
   "description": "The execvp function for Node.js",
-  "main": "index.js",
+  "main": "exec.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlphaHydrae/node-exec.git"
@@ -13,6 +13,8 @@
     "execvp"
   ],
   "files": [
+    "exec.d.ts",
+    "exec.js",
     "index.d.ts",
     "index.js"
   ],
@@ -34,12 +36,15 @@
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
+    "check": "npm run lint && npm run format",
+    "check:write": "npm run lint && npm run format:write",
     "format": "npm run format:cargo && npm run format:prettier",
     "format:cargo": "cargo fmt --check",
     "format:cargo:write": "cargo fmt",
     "format:prettier": "prettier --check .",
     "format:prettier:write": "prettier --write .",
     "format:write": "npm run format:cargo:write && npm run format:prettier:write",
+    "lint": "cargo clippy",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "jest",
     "version": "napi version"
@@ -49,6 +54,7 @@
     "@swc-node/register": "^1.10.6",
     "@swc/core": "^1.6.13",
     "chalk": "^5.3.0",
+    "doctoc": "^2.2.1",
     "jest": "^29.7.0",
     "npm-run-all2": "^7.0.0",
     "prettier": "^3.4.2",

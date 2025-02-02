@@ -1,6 +1,8 @@
-const { doNotCloseOnExit, execvp } = require('./index.js');
+const native = require('./index.js');
 
-doNotCloseOnExit(process.stdin.fd);
-doNotCloseOnExit(process.stdout.fd);
-doNotCloseOnExit(process.stderr.fd);
-execvp('ls', [process.argv0, 'tests']);
+module.exports.execvp = function (file, args) {
+  native.doNotCloseOnExit(process.stdin.fd);
+  native.doNotCloseOnExit(process.stdout.fd);
+  native.doNotCloseOnExit(process.stderr.fd);
+  native.execvp(file, [process.argv0, ...args]);
+};
