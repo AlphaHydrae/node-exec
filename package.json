@@ -1,6 +1,6 @@
 {
   "name": "@alphahydrae/exec",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "The execvp function for Node.js",
   "main": "exec.js",
   "repository": {
