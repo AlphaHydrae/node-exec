@@ -13,6 +13,28 @@ use nix::{
 };
 
 #[napi]
+/// Performs the execvp system call with the given file and arguments, replacing
+/// the current process image with the new one.
+///
+/// This function does not return if successful, as the current process is
+/// replaced by the new one. An error may be thrown, with an error message
+/// containing the error code returned by execvp.
+///
+/// Note that the close-on-exec flag should be cleared for the process's file
+/// descriptors. Otherwise, they will be closed automatically when the new
+/// process is executed, which will likely make it fail. Use the
+/// `doNotCloseOnExit` function to clear the flag for a file descriptor.
+///
+/// @example
+/// import { execvp } from '@alphahydrae/exec';
+/// execvp('ls', ['ls', '-l', '.']);
+///
+/// @param {string} file The file to execute. If not a path, the PATH environment
+///                      variable is searched.
+/// @param {string[]} args The arguments to pass to the new process. Note that
+///                        the first argument should be the name of the file
+///                        being executed.
+/// @throws {Error} If the execvp system call fails.
 pub fn execvp(file: String, args: Vec<String>) -> Result<()> {
     let file = convert_string(file.clone())?;
 
@@ -33,6 +55,16 @@ pub fn execvp(file: String, args: Vec<String>) -> Result<()> {
 }
 
 #[napi]
+/// Clears the close-on-exec flag for the given file descriptor, preventing it
+/// from being closed automatically when a new process is executed with the exec
+/// family of functions.
+///
+/// @example
+/// doNotCloseOnExit(process.stdout.fd);
+///
+/// @param {number} file The file descriptor to close (e.g. `process.stdout.fd`).
+/// @returns {undefined}
+/// @throws {Error} If the fcntl system call fails.
 pub fn do_not_close_on_exit(fd: i32) -> Result<()> {
     let current_flags = fcntl(fd, FcntlArg::F_GETFD)?;
 
