@@ -40,14 +40,21 @@ npm i @alphahydrae/exec
 
 ## Support matrix
 
-| OS & Architecture | Node 18 | Node 20 | Node 22 |
-| ----------------- | ------- | ------- | ------- |
-| macOS x64         | ✓       | ✓       | ✓       |
-| macOS arm64       | ✓       | ✓       | ✓       |
-| Linux x64 gnu     | ✓       | ✓       | ✓       |
-| Linux x64 musl    | ✓       | ✓       | ✓       |
-| Linux arm64 gnu   | ✓       | ✓       | ✓       |
-| Linux arm64 musl  | ✓       | ✓       | ✓       |
+| OS & Architecture | Node.js 18 | Node.js 20 | Node.js 22 |
+| :---------------- | :--------: | :--------: | :--------: |
+| macOS x64         |     ✅      |     ✅      |     ✅      |
+| macOS arm64       |     ✅      |     ✅      |     ✅      |
+| Linux x64 gnu     |     ✅      |     ✅      |     ✅      |
+| Linux x64 musl    |     ✅      |     ✅      |     ✅      |
+| Linux arm64 gnu   |     ✅      |     ✅      |     ✅      |
+| Linux arm64 musl  |     ✅      |     ✅      |     ✅      |
+| Linux arm gnu     |     ❌      |     ❌      |     ❌      |
+| Android arm64     |     ❌      |     ❌      |     ❌      |
+| Android armv7     |     ❌      |     ❌      |     ❌      |
+| FreeBSD x64       |     ❌      |     ❌      |     ❌      |
+| Windows x64       |     ❌      |     ❌      |     ❌      |
+| Windows x32       |     ❌      |     ❌      |     ❌      |
+| Windows arm64     |     ❌      |     ❌      |     ❌      |
 
 > The `exec` family of functions is part of the
 > [POSIX](https://en.wikipedia.org/wiki/POSIX) operating system API, so it will
