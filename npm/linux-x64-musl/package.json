@@ -1,6 +1,6 @@
 {
   "name": "@alphahydrae/exec-linux-x64-musl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The execvp function for Node.js",
   "author": "Simon Oulevay <npm@alphahydrae.com>",
   "keywords": [
