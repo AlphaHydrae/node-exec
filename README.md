@@ -20,6 +20,15 @@ This package was developed to be used in Node.js scripts that are frontends to
 execute other commands. For example, a script that would build and execute a
 complex SSH or Ansible command.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installation](#installation)
+- [Support matrix](#support-matrix)
+- [Credits](#credits)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
 ```bash
