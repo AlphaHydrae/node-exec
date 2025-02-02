@@ -1,6 +1,6 @@
 {
   "name": "@alphahydrae/exec-darwin-arm64",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "The execvp function for Node.js",
   "author": "Simon Oulevay <npm@alphahydrae.com>",
   "keywords": [
