@@ -14,27 +14,25 @@ await Promise.all(
       .filter(part => part !== undefined)
       .join('-');
     const nativeBindingFile = `exec.${variantName}.node`;
+    const variantPackageJson = {
+      name: `${packageJson.name}-${variantName}`,
+      version: packageJson.version,
+      description: packageJson.description,
+      author: packageJson.author,
+      keywords: packageJson.keywords,
+      license: packageJson.license,
+      repository: packageJson.repository,
+      main: nativeBindingFile,
+      files: [nativeBindingFile],
+      os: toArray(variant.os),
+      cpu: toArray(variant.cpu),
+      libc: toArray(variant.libc),
+      engines: packageJson.engines
+    };
+
     await writeFile(
       path.join(root, 'npm', variantName, 'package.json'),
-      JSON.stringify(
-        {
-          name: `${packageJson.name}-${variantName}`,
-          version: packageJson.version,
-          description: packageJson.description,
-          author: packageJson.author,
-          keywords: packageJson.keywords,
-          license: packageJson.license,
-          repository: packageJson.repository,
-          main: nativeBindingFile,
-          files: [nativeBindingFile],
-          os: toArray(variant.os),
-          cpu: toArray(variant.cpu),
-          libc: toArray(variant.libc),
-          engines: packageJson.engines
-        },
-        undefined,
-        2
-      ),
+      `${JSON.stringify(variantPackageJson, undefined, 2)}\n`,
       'utf8'
     );
   })
