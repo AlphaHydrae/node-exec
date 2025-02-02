@@ -54,7 +54,6 @@ jobs:
   build:
     name: Build ${{ matrix.settings.target }} with node@22
     runs-on: ${{ matrix.settings.host }}
-    if: ${{ github.ref == 'refs/head/main' || startsWith(github.ref, 'refs/tags/') }}
     strategy:
       fail-fast: false
       matrix:
@@ -134,7 +133,6 @@ jobs:
 
   test-macos-binding:
     name: Test ${{ matrix.settings.target }} with node@${{ matrix.node }}
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     needs:
       - build
     strategy:
@@ -313,7 +311,6 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     needs:
       - lint
       - test-macos-binding
@@ -340,6 +337,7 @@ jobs:
         run: ls -R ./npm
         shell: bash
       - name: Publish
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
         run: |
           npm config set provenance true
           if git log -1 --pretty=%B | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+$";
