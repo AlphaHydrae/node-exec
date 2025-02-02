@@ -7,6 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/AlphaHydrae/node-exec.git"
   },
+  "author": "Simon Oulevay <npm@alphahydrae.com>",
   "license": "MIT",
   "keywords": [
     "exec",

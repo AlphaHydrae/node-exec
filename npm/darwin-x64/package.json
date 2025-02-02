@@ -13,9 +13,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "package-template.darwin-x64.node",
+  "main": "exec.darwin-x64.node",
   "files": [
-    "package-template.darwin-x64.node"
+    "exec.darwin-x64.node"
   ],
   "repository": {
     "type": "git",

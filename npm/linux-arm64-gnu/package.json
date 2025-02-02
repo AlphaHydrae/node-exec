@@ -16,9 +16,9 @@
   "libc": [
     "glibc"
   ],
-  "main": "package-template.linux-arm64-gnu.node",
+  "main": "exec.linux-arm64-gnu.node",
   "files": [
-    "package-template.linux-arm64-gnu.node"
+    "exec.linux-arm64-gnu.node"
   ],
   "repository": {
     "type": "git",

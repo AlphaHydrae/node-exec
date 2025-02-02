@@ -111,6 +111,7 @@ jobs:
 
   test-macos-binding:
     name: Test ${{ matrix.settings.target }} with node@${{ matrix.node }}
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     needs:
       - build
     strategy:

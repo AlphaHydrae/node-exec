@@ -16,9 +16,9 @@
   "libc": [
     "musl"
   ],
-  "main": "package-template.linux-arm64-musl.node",
+  "main": "exec.linux-arm64-musl.node",
   "files": [
-    "package-template.linux-arm64-musl.node"
+    "exec.linux-arm64-musl.node"
   ],
   "repository": {
     "type": "git",
