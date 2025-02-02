@@ -37,6 +37,7 @@
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
+    "build:package": "node scripts/build-packages.mjs",
     "check": "npm run lint && npm run format",
     "check:write": "npm run lint && npm run format:write",
     "doctoc": "doctoc --github --notitle README.md && prettier --write README.md",

@@ -1,26 +1,27 @@
 {
   "name": "@alphahydrae/exec-darwin-arm64",
+  "version": "0.2.4",
   "description": "The execvp function for Node.js",
-  "license": "MIT",
+  "author": "Simon Oulevay <npm@alphahydrae.com>",
   "keywords": [
     "exec",
     "execvp"
   ],
-  "version": "0.2.4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaHydrae/node-exec.git"
+  },
+  "main": "exec.darwin-arm64.node",
+  "files": [
+    "exec.darwin-arm64.node"
+  ],
   "os": [
     "darwin"
   ],
   "cpu": [
     "arm64"
   ],
-  "main": "exec.darwin-arm64.node",
-  "files": [
-    "exec.darwin-arm64.node"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlphaHydrae/node-exec.git"
-  },
   "engines": {
     "node": "^18 || ^20 || ^22"
   }

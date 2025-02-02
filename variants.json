@@ -1,0 +1,30 @@
+[
+  {
+    "os": "darwin",
+    "cpu": "arm64"
+  },
+  {
+    "os": "darwin",
+    "cpu": "x64"
+  },
+  {
+    "os": "linux",
+    "cpu": "arm64",
+    "libc": "glibc"
+  },
+  {
+    "os": "linux",
+    "cpu": "arm64",
+    "libc": "musl"
+  },
+  {
+    "os": "linux",
+    "cpu": "x64",
+    "libc": "glibc"
+  },
+  {
+    "os": "linux",
+    "cpu": "x64",
+    "libc": "musl"
+  }
+]
