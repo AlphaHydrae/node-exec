@@ -11,7 +11,7 @@ console.log(`
   This will never print because the executing Node.js
   program is replaced by the executed command, keeping
   the same process ID and file descriptors.
-`)
+`);
 ```
 
 If you're familiar with Bash's `exec` function, this is the same for Node.js.
