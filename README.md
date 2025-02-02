@@ -40,3 +40,17 @@ npm i @alphahydrae/exec
 > The `exec` family of functions is part of the
 > [POSIX](https://en.wikipedia.org/wiki/POSIX) operating system API, so it will
 > not work on Windows.
+
+## Credits
+
+This package is a re-implementation of
+https://github.com/jprichardson/node-kexec in Rust, also inspired by the
+following conversations:
+
+- [A way to call execl, execle, execlp, execv, execvP or execvp from Node.js](https://stackoverflow.com/a/77774287/249893)
+- [execve in node](https://groups.google.com/g/nodejs/c/4vtWG1KCQC4)
+
+Also a big thank you to the following Rust projects for making it easy:
+
+- [NAPI-RS](https://napi.rs) (build pre-compiled Node.js addons in Rust)
+- [nix](https://docs.rs/nix) (Rust-friendly bindings to the various *nix system functions)
