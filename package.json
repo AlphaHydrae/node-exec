@@ -50,7 +50,7 @@
     "lint": "cargo clippy",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "jest",
-    "version": "napi version"
+    "version": "napi version && npm run build:package && prettier --write ./npm/*/package.json"
   },
   "devDependencies": {
     "@napi-rs/cli": "^2.18.4",
