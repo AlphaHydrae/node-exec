@@ -27,13 +27,13 @@ use nix::{
 ///
 /// @example
 /// import { execvp } from '@alphahydrae/exec';
-/// execvp('ls', ['ls', '-l', '.']);
+/// execvp('ls', ['/bin/ls', '-l', '.']);
 ///
 /// @param {string} file The file to execute. If not a path, the PATH environment
 ///                      variable is searched.
 /// @param {string[]} args The arguments to pass to the new process. Note that
-///                        the first argument should be the name of the file
-///                        being executed.
+///                        the first argument, by convention, should point to
+///                        the filename associated with the file being executed.
 /// @throws {Error} If the execvp system call fails.
 pub fn execvp(file: String, args: Vec<String>) -> Result<()> {
     let file = convert_string(file.clone())?;
