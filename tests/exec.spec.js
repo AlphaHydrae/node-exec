@@ -10,4 +10,10 @@ describe('exec', () => {
       stdout: 'exec.js\nexec.spec.js\n'
     });
   });
+
+  test('the execvp error code is in the error message if the call fails', async () => {
+    await expect(() => execAsync('node tests/exec.js foo')).rejects.toThrow(
+      'execvp failed with code ENOENT: No such file or directory'
+    );
+  });
 });
