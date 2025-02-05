@@ -1,5 +1,6 @@
 # https://git-scm.com/docs/gitignore
 /artifacts
+/docs
 /*.node
 /node_modules
 /npm/*/*.node
