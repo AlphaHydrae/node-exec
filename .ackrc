@@ -1,0 +1,6 @@
+# https://beyondgrep.com
+--ignore-file=is:Cargo.lock
+--ignore-dir=docs
+--ignore-file=is:package-lock.json
+--ignore-dir=target
+--ignore-dir=tmp
