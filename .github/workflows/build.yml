@@ -37,7 +37,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - name: Install Node.js dependencies
@@ -71,7 +71,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - name: Install dependencies
         run: npm ci
@@ -83,7 +83,7 @@ jobs:
           test -z "$(git status --porcelain)"
 
   build:
-    name: Build ${{ matrix.settings.target }} with node@22
+    name: Build ${{ matrix.settings.target }} with node@24
     runs-on: ${{ matrix.settings.host }}
     strategy:
       fail-fast: false
@@ -120,7 +120,7 @@ jobs:
         uses: actions/setup-node@v4
         if: ${{ !matrix.settings.docker }}
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - name: Install
         uses: dtolnay/rust-toolchain@stable
@@ -177,9 +177,9 @@ jobs:
             target: x86_64-apple-darwin
             architecture: x64
         node:
-          - '18'
           - '20'
           - '22'
+          - '24'
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v4
@@ -210,9 +210,9 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '18'
           - '20'
           - '22'
+          - '24'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -242,9 +242,9 @@ jobs:
   #     fail-fast: false
   #     matrix:
   #       node:
-  #         - '18'
   #         - '20'
   #         - '22'
+  #         - '24'
   #   runs-on: ubuntu-latest
   #   steps:
   #     - uses: actions/checkout@v4
@@ -275,9 +275,9 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '18'
           - '20'
           - '22'
+          - '24'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -308,7 +308,7 @@ jobs:
             ls -la
 
   test-linux-aarch64-musl-binding:
-    name: Test aarch64-unknown-linux-musl with node@22
+    name: Test aarch64-unknown-linux-musl with node@24
     needs:
       - build
     runs-on: ubuntu-latest
@@ -333,7 +333,7 @@ jobs:
       - name: Setup and run tests
         uses: addnab/docker-run-action@v3
         with:
-          image: node:22-alpine
+          image: node:24-alpine
           options: '--platform linux/arm64 -v ${{ github.workspace }}:/build -w /build'
           run: |
             set -e
@@ -356,7 +356,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - name: Install dependencies
         run: npm ci
