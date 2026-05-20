@@ -284,9 +284,6 @@ jobs:
       - name: List packages
         run: ls -R .
         shell: bash
-      - name: Install dependencies
-        run: |
-          npm ci
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
         with:
@@ -299,6 +296,7 @@ jobs:
           options: '--platform linux/arm64 -v ${{ github.workspace }}:/build -w /build'
           run: |
             set -e
+            npm ci
             npm test
             ls -la
 
@@ -317,9 +315,6 @@ jobs:
       - name: List packages
         run: ls -R .
         shell: bash
-      - name: Install dependencies
-        run: |
-          npm ci
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
         with:
@@ -332,6 +327,7 @@ jobs:
           options: '--platform linux/arm64 -v ${{ github.workspace }}:/build -w /build'
           run: |
             set -e
+            npm ci
             npm test
 
   publish:
