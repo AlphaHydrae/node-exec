@@ -2,7 +2,10 @@
 
 use std::{
     ffi::{CStr, CString},
-    os::{fd::RawFd, raw::c_int},
+    os::{
+        fd::{BorrowedFd, RawFd},
+        raw::c_int,
+    },
 };
 
 use napi::{Error, Result, Status};
@@ -83,7 +86,8 @@ fn convert_string(s: String) -> Result<CString> {
 }
 
 fn fcntl(fd: RawFd, arg: FcntlArg) -> Result<c_int> {
-    nix::fcntl::fcntl(fd, arg).map_err(|err| {
+    let borrowed = unsafe { BorrowedFd::borrow_raw(fd) };
+    nix::fcntl::fcntl(borrowed, arg).map_err(|err| {
         Error::new(
             Status::GenericFailure,
             format!("fcntl failed with code {}", err),
