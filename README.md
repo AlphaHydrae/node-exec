@@ -41,7 +41,7 @@ npm i @alphahydrae/exec
 
 ## Support matrix
 
-| OS & Architecture | Node.js 20 | Node.js 22 | Node.js 24 |
+| OS & Architecture | Node.js 22 | Node.js 24 | Node.js 26 |
 | :---------------- | :--------: | :--------: | :--------: |
 | macOS x64         |     ✅     |     ✅     |     ✅     |
 | macOS arm64       |     ✅     |     ✅     |     ✅     |
